@@ -21,7 +21,6 @@ public class HttpOptions {
     public final static String TYPE_JSON = "json";
     public final static String TYPE_DATA = "data";
     public final static String TYPE_URI = "uri";
-    public final static String TYPE_IMAGE = "image";
 
     public final static String METHOD_GET = "GET";
     public final static String METHOD_POST = "POST";
@@ -43,7 +42,7 @@ public class HttpOptions {
     public String absoluteUrl() {
         if(_absoluteUrl == null && url != null) {
 
-            if((TYPE_URI.equals(type) || TYPE_IMAGE.equals(type) || METHOD_GET.equals(method))
+            if((TYPE_URI.equals(type)  || METHOD_GET.equals(method))
                     && (data != null && data instanceof Map)) {
                 StringBuffer query = new StringBuffer();
                 Map<String,Object> m = (Map<String,Object>) data;
@@ -74,7 +73,7 @@ public class HttpOptions {
     private String _key;
 
     public String key() {
-        if(_key == null && (TYPE_URI.equals(type) || TYPE_IMAGE.equals(type)) && url != null) {
+        if(_key == null && TYPE_URI.equals(type) && url != null) {
             _key = cacheKey(absoluteUrl());
         }
         return _key;
