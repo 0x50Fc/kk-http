@@ -41,7 +41,6 @@ public class HttpOptions {
 
     public String absoluteUrl() {
         if(_absoluteUrl == null && url != null) {
-
             if((TYPE_URI.equals(type)  || METHOD_GET.equals(method))
                     && (data != null && data instanceof Map)) {
                 StringBuffer query = new StringBuffer();
@@ -78,6 +77,8 @@ public class HttpOptions {
         }
         return _key;
     }
+
+
 
 
     public static interface OnLoad {
