@@ -17,10 +17,10 @@ import java.util.Map;
 public class HttpOptions {
 
 
-    public final static String TYPE_TEXT = "text";
-    public final static String TYPE_JSON = "json";
-    public final static String TYPE_DATA = "data";
-    public final static String TYPE_URI = "uri";
+    public final static String TYPE_TEXT = "text";//字符串 默认
+    public final static String TYPE_JSON = "json";//json对象  map or list
+    public final static String TYPE_DATA = "data";//二进制数组
+    public final static String TYPE_URI = "uri";//文件路径
 
     public final static String METHOD_GET = "GET";
     public final static String METHOD_POST = "POST";
