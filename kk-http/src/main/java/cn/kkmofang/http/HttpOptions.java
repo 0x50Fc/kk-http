@@ -10,6 +10,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
+import cn.kkmofang.http.okhttp.HttpSettingConst;
+
 /**
  * Created by hailong11 on 2018/3/13.
  */
@@ -22,14 +24,21 @@ public class HttpOptions {
     public final static String TYPE_DATA = "data";//二进制数组
     public final static String TYPE_URI = "uri";//文件路径
 
-    public final static String METHOD_GET = "GET";
+    public final static String METHOD_GET = "GET";// default method
     public final static String METHOD_POST = "POST";
 
     public String url;
-    public String method;
+    /**
+     * GET is the default method( method == null )
+     */
+    public String method = HttpSettingConst.METHOD_DEFAULT;
     public Object data;
     public Map<String,Object> headers;
-    public String type;
+    public String type = HttpSettingConst.TYPE_DEFAULT;
+    /**
+     * default 30 seconds
+     * unit ( second )
+     */
     public long timeout;
 
     public OnLoad onload;
