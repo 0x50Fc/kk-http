@@ -10,8 +10,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
-import cn.kkmofang.http.okhttp.HttpSettingConst;
-
 /**
  * Created by hailong11 on 2018/3/13.
  */
@@ -31,10 +29,10 @@ public class HttpOptions {
     /**
      * GET is the default method( method == null )
      */
-    public String method = HttpSettingConst.METHOD_DEFAULT;
+    public String method = METHOD_GET;
     public Object data;
     public Map<String,Object> headers;
-    public String type = HttpSettingConst.TYPE_DEFAULT;
+    public String type = TYPE_TEXT;
     /**
      * default 30 seconds
      * unit ( second )
@@ -193,9 +191,16 @@ public class HttpOptions {
         return path(context,"cache://" + cacheKey(uri));
     }
 
+    public static String cachePathWithKey(Context context,String key) {
+        return path(context,"cache://" + key);
+    }
+
     public static String cacheTmpPath(Context context,String uri) {
         return path(context,"cache://" + cacheKey(uri) + ".tmp");
     }
 
+    public static String cacheTmpPathWithKey(Context context,String key) {
+        return path(context,"cache://" + key + ".tmp");
+    }
 
 }

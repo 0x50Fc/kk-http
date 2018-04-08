@@ -27,9 +27,5 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.squareup.okhttp3:okhttp:3.10.0'
-    compile 'com.google.code.gson:gson:2.8.2'
-    compile 'commons-io:commons-io:2.6'
-    compile 'org.apache.commons:commons-collections4:4.1'
     testCompile 'junit:junit:4.12'
 }
