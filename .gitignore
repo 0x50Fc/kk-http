@@ -39,6 +39,9 @@ captures/
 .idea/gradle.xml
 .idea/dictionaries
 .idea/libraries
+demo/.idea
+.DS_Store
+
 
 # Keystore files
 *.jks
