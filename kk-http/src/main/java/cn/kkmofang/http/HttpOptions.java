@@ -169,17 +169,16 @@ public class HttpOptions {
 
             StringBuffer sb = new StringBuffer();
 
-            sb.append("kk-");
-
             for(int i=0;i<bytes.length;i++) {
                 String v = Integer.toHexString(bytes[i]);
                 if(v.length() == 1) {
                     sb.append("0").append(v);
                 } else {
-                    sb.append(v);
+                    sb.append(v.substring(0,2));
                 }
             }
 
+            return sb.toString();
         } catch (NoSuchAlgorithmException e) {
         } catch (UnsupportedEncodingException e) {
         }
@@ -188,19 +187,19 @@ public class HttpOptions {
     }
 
     public static String cachePath(Context context,String uri) {
-        return path(context,"cache://" + cacheKey(uri));
+        return path(context,"cache://kk/" + cacheKey(uri));
     }
 
     public static String cachePathWithKey(Context context,String key) {
-        return path(context,"cache://" + key);
+        return path(context,"cache://kk/" + key);
     }
 
     public static String cacheTmpPath(Context context,String uri) {
-        return path(context,"cache://" + cacheKey(uri) + ".tmp");
+        return path(context,"cache://kk/" + cacheKey(uri) + ".tmp");
     }
 
     public static String cacheTmpPathWithKey(Context context,String key) {
-        return path(context,"cache://" + key + ".tmp");
+        return path(context,"cache://kk/" + key + ".tmp");
     }
 
 }

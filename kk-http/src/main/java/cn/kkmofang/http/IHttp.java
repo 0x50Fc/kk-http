@@ -10,4 +10,8 @@ public interface IHttp {
 
     void cancel(Object weakObject);
 
+    String encodeJSON(Object object);
+
+    Object decodeJSON(String text);
+
 }
