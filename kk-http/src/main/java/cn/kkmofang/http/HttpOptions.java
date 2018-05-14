@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
 /**
- * Created by hailong11 on 2018/3/13.
+ * Created by zhanghailong on 2018/3/13.
  */
 
 public class HttpOptions {
