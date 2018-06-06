@@ -173,8 +173,10 @@ public class HttpOptions {
                 String v = Integer.toHexString(bytes[i]);
                 if(v.length() == 1) {
                     sb.append("0").append(v);
+                } else if(v.length() > 2){
+                    sb.append(v.substring(v.length()-2));
                 } else {
-                    sb.append(v.substring(0,2));
+                    sb.append(v);
                 }
             }
 
